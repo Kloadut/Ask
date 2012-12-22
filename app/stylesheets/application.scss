@@ -1,0 +1,48 @@
+html {
+    body {
+        background: #EEE;
+        color: #333;
+        #page {
+            #hero {
+                font-size: 30px;
+                p.ihave {
+                    margin-bottom: 10px;
+                    select {
+                        font-size: 30px;
+                        color: #333;
+                        background: transparent;
+                        width: 268px;
+                        padding: 5px;
+                        border: 1px solid #ccc;
+                    }
+                }
+                p.full input {
+                    //width: 50%;
+                    height: 40px;
+                    //text-align: center;
+                    font-size: 30px;
+                }
+                li.tagit-choice {
+                    padding-right: 1.1em;
+                    a.tagit-close span {
+                        font-size: 30px;
+                    }
+                }
+                li.tagit-new {
+                    width: 6em;
+                    overflow: show;
+                }
+            }
+        }
+        ul.ui-autocomplete {
+            list-style-type: none;
+            padding-top: 0.2em;
+            font-size: 30px;
+        }
+    }
+}
+
+.grey { color: #999 }
+.center { text-align: center; }
+.clear { clear: both; }
+.full { width: 100% }

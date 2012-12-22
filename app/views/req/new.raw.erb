@@ -1,0 +1,17 @@
+    <div class="half centered">
+        <label for="title">Title</label><input type="text" name="title" />
+    </div>
+    <div class="half centered">
+        <label for="body">Description</label><textarea name="body" id= rows="8" cols="40"></textarea>
+    </div>
+    <div class="half centered">
+        <label for="author_nick">Nickname</label><input type="text" name="author_nick" />
+    </div>
+    <div class="half centered">
+        <label for="author_email">Mail</label><input type="text" name="author_email" />
+    </div>
+    <div class="half centered">
+        <label for="image">Image attachment</label><input type="file" name="image" />
+    </div>
+    <%= @captcha %>
+    <input type="submit" value="Save" />

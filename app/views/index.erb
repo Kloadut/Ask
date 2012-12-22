@@ -1,0 +1,28 @@
+<form action="<%= url :req, :new %>" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+    <div id="hero" class="center">
+        <p class="ihave full">I have <select name="type" id="type">
+                <option value="problem">a problem with</option>
+                <option value="idea">an idea for</option>
+                <option value="question">a question about</option>
+                <option value="comment">a comment about</option>
+            </select> <strong>YunoHost</strong> regarding
+        </p>
+        <p class="full"><input style="width: 50%" type="text" name="tags" id="tagbar" placeholder="keywords" /></p>
+    </div>
+    <a class="third btn btn-full btn-big" id="look">Look for existing solutions</a>
+    <a class="third btn btn-full btn-big" id="ask">Precise my problem</a>
+
+    <div class="clear"></div>
+    <br />
+    <br />
+    <div id="index_content"></div>
+</form>
+
+<input type="hidden" id="look_problem" value="Look for existing solutions" />
+<input type="hidden" id="look_idea" value="Look for similar ideas" />
+<input type="hidden" id="look_question" value="Look for existing answers" />
+<input type="hidden" id="look_comment" value="Look for similar comment" />
+<input type="hidden" id="ask_problem" value="Precise my problem" />
+<input type="hidden" id="ask_idea" value="Submit my idea" />
+<input type="hidden" id="ask_question" value="Ask my question" />
+<input type="hidden" id="ask_comment" value="Submit my comment" />

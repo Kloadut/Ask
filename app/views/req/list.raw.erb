@@ -1,0 +1,5 @@
+<ul>
+    <% @reqs.each do |req| %>
+        <li><span><%= req.created_at.asctime %></span>  <span><%= req.author_nick %></span>  <a href="<%= url_for(:req, :show, :id => req.id) %>"><span><%= req.title %></span></a></li>
+    <% end %>
+</ul>

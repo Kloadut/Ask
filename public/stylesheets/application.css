@@ -1,0 +1,40 @@
+html body {
+  background: #EEE;
+  color: #333; }
+  html body #page #hero {
+    font-size: 30px; }
+    html body #page #hero p.ihave {
+      margin-bottom: 10px; }
+      html body #page #hero p.ihave select {
+        font-size: 30px;
+        color: #333;
+        background: transparent;
+        width: 268px;
+        padding: 5px;
+        border: 1px solid #ccc; }
+    html body #page #hero p.full input {
+      height: 40px;
+      font-size: 30px; }
+    html body #page #hero li.tagit-choice {
+      padding-right: 1.1em; }
+      html body #page #hero li.tagit-choice a.tagit-close span {
+        font-size: 30px; }
+    html body #page #hero li.tagit-new {
+      width: 6em;
+      overflow: show; }
+  html body ul.ui-autocomplete {
+    list-style-type: none;
+    padding-top: 0.2em;
+    font-size: 30px; }
+
+.grey {
+  color: #999; }
+
+.center {
+  text-align: center; }
+
+.clear {
+  clear: both; }
+
+.full {
+  width: 100%; }
