@@ -7,3 +7,21 @@
 </div>
 
 <img src="/attachments/<%= @req.id %>/image.png" />
+
+
+<% unless @comments.empty? %>
+  <h3>Comments:</h3>
+  <% @comments.each do |comment| %>
+    <%= comment.nick %>:<br />
+    <%= comment.body %><br /><br />
+  <% end %>
+<% end %>
+
+<h3>Comment this app:</h3>
+<form method=post action="<%= url(:req, :comment) %>">
+  <input type='hidden' name='req_id' value="<%= @req.id%>"/>
+  <input type=text name="nick" value="Anonymous"><br />
+  <textarea rows="3" name="body"></textarea><br />
+  <%= @captcha %>
+  <input type="submit" value="Comment !">
+</form>

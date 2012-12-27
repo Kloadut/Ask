@@ -1,23 +1,4 @@
 Ask.controllers :req do
-  # get :index, :map => "/foo/bar" do
-  #   session[:foo] = "bar"
-  #   render 'index'
-  # end
-
-  # get :sample, :map => "/sample/url", :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   "Maps to url '/foo/#{params[:id]}'"
-  # end
-
-  # get "/example" do
-  #   "Hello world!"
-  # end
-
     get :index, :map => "/" do
         render 'index'
     end
@@ -71,6 +52,26 @@ Ask.controllers :req do
 
     get :show, :with => :id do
         @req = Req.find(params[:id])
+        @comments = @req.comments
+        captcha_create
         render 'req/show'
+    end
+
+    post :comment do
+        captcha_validate
+        @req =  Req.find(params[:req_id])
+        if !@req.nil?
+            c = @req.comments.create(:nick => params[:nick], :body => params[:body])
+            if c.valid?
+                @req.save
+                flash[:notice] = t "Your comment has been posted"
+            else
+                flash[:warning] = t "Your comment hasn't been posted:<br />#{c.errors.full_messages}"
+            end
+            redirect url(:req, :show, :id => params[:req_id])
+        else
+            flash[:warning] =  "The request you are trying to comment doesn't exist"
+        end
+        redirect url(:req, :index)
     end
 end

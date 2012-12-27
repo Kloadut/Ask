@@ -15,18 +15,22 @@ $(document).ready(function() {
 
     // Load form on index
     $("#ask").click(function() {
-        $("#look").removeClass("btn-active");
-        $("#ask").addClass("btn-active");
-        $("#index_content").load("/"+ $('#lang').val() +"/req/new/raw", function() {
-            calculate_captcha();
-        });
+        if($("#ask.btn-active").length == 0) {
+            $("#look").removeClass("btn-active");
+            $("#ask").addClass("btn-active");
+            $("#index_content").load("/"+ $('#lang').val() +"/req/new/raw", function() {
+                calculate_captcha();
+            });
+        }
     });
 
     // Load list on index
     $("#look").click(function() {
-        $("#ask").removeClass("btn-active");
-        $("#look").addClass("btn-active");
-        $("#index_content").load("/"+ $('#lang').val() +"/req/list/raw?tags="+ $('#tagbar').val() +"&type="+ $('#type').val());
+        if($("#look.btn-active").length == 0) {
+            $("#ask").removeClass("btn-active");
+            $("#look").addClass("btn-active");
+            $("#index_content").load("/"+ $('#lang').val() +"/req/list/raw?tags="+ $('#tagbar').val() +"&type="+ $('#type').val());
+        }
     });
 
     $('#tagbar').change(function() {
